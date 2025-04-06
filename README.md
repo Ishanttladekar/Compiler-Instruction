@@ -1,82 +1,87 @@
 🔺 Expression Evaluator Compiler 🔺
-📌 Expression Evaluator Compiler is a simple compiler-like application built using Flex (Lex) and Bison (Yacc) in C to parse and evaluate algebraic expression instructions — specifically:
+A simple compiler-like application built using Flex (Lex) and Bison (Yacc) in C to parse and evaluate the algebraic expression:
+
 x² + 2x + 1
 
-✨ Features ✨
-✅ Parses user-friendly input like:
+✨ Features
+✅ Parses input like:
 
 r
 Copy
 Edit
 x5 compute expression
-✅ Generates three-address code (3AC) for the algebraic formula
+✅ Generates Three-Address Code (3AC) for the formula
 
-✅ Displays pseudo assembly–style intermediate instructions
+✅ Displays pseudo assembly-style intermediate instructions
 
-✅ Computes and displays final numeric result
+✅ Computes and displays the final numeric result
 
-✅ Shows total token count parsed
+✅ Outputs the total token count parsed
 
-📂 Project Structure 📂
+📂 Project Structure
 r
 Copy
 Edit
 expression-compiler/
-├── lexar.l        # Flex lexical analyzer rules
-├── parser.y       # Bison grammar and actions
-├── Makefile       # Build automation script
-├── README.md      # This documentation
-└── (optional)     # Any helper headers or scripts
-⚙️ Requirements ⚙️
+├── lexar.l         # Flex lexical analyzer rules
+├── parser.y        # Bison grammar and actions
+├── Makefile        # Build automation
+├── README.md       # Project documentation
+└── (optional)      # Any helper files or headers
+⚙️ Requirements
 flex (v2.6+)
 
 bison (v3.0+)
 
-gcc (supports C99 or above)
+gcc (C99 compatible)
 
-make (optional, for Makefile usage)
+make (optional)
 
-🪟 On Windows (MSYS2)
+🪟 For Windows (MSYS2)
 bash
 Copy
 Edit
 pacman -Syu
 pacman -S mingw-w64-x86_64-gcc flex bison make
-🐧 On Linux (Debian/Ubuntu)
+🐧 For Linux (Debian/Ubuntu)
 bash
 Copy
 Edit
 sudo apt-get update
 sudo apt-get install gcc flex bison make
-🔨 Build Instructions 🔨
-Using Makefile
+🔨 Build Instructions
+✅ Using Makefile
 bash
 Copy
 Edit
 make
-This will: 1️⃣ Run flex lexar.l to generate lex.yy.c
-2️⃣ Run bison -d parser.y to generate parser.tab.c and parser.tab.h
-3️⃣ Compile all sources:
+This will:
+
+Run flex lexar.l → generates lex.yy.c
+
+Run bison -d parser.y → generates parser.tab.c and parser.tab.h
+
+Compile with:
 
 bash
 Copy
 Edit
 gcc lex.yy.c parser.tab.c -o expression -lm
-Manual Build
+🔧 Manual Build
 bash
 Copy
 Edit
 flex lexar.l
 bison -d parser.y
 gcc lex.yy.c parser.tab.c -o expression -lm
-🚀 How to Use 🚀
+🚀 Usage
 Run the compiled binary:
 
 bash
 Copy
 Edit
 ./expression
-Input format:
+Follow the input format:
 
 php-template
 Copy
@@ -100,31 +105,40 @@ ADD result, t2, 1     # x^2 + 2x + 1
 
 Total Tokens: 3
 Computed Result: 36
-🧮 Expression Formula 🧮
-𝐸=𝑥^2+2𝑥+1
-E=x^2+2x+1
-
+🧮 Expression Formula
+𝐸
+=
+𝑥
+2
++
+2
+𝑥
++
+1
+E=x 
+2
+ +2x+1
 Where:
 
-x = input value
+x = input value (integer)
 
-🧹 Cleaning the Build 🧹
-To remove generated files:
+🧹 Clean Build Files
+Using Makefile:
 
 bash
 Copy
 Edit
 make clean
-or manually:
+Or manually:
 
 bash
 Copy
 Edit
 rm -f lex.yy.c parser.tab.* expression
-📜 License 📜
-This project is released under the MIT License.
+📜 License
+This project is licensed under the MIT License.
 
-✍🏻 Author ✍🏻
+✍🏻 Author
 Ishant Kr. Ladekar
 Roll Number: 23115043
 B.Tech CSE, NIT Raipur
